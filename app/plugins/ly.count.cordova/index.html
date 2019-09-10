@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css" />
+        <style type="text/css">
+            button{
+              margin-top: 20px !important;
+              margin-bottom: 20px !important;
+            }
+        </style>
+        <title>Countly Cordova Demo App</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1 class="ui center aligned header">Countly Cordova Demo App</h1>
+            <img class="ui centered medium image" src="https://count.ly/wp-content/uploads/2014/10/countly_logo_color.png">
+            <button onclick="app.start()" class="fluid ui green button">Start</button>
+            <button onclick="app.stop()" class="fluid ui red button">Stop</button>
+
+            <button onclick="app.setUserData()" class="fluid ui button teal">Send Users Data</button>
+            <button onclick="app.onRegistrationId()" class="fluid ui button teal">Push Message</button>
+
+            <button onclick="app.basicEvent()" class="fluid ui button">Basic Events</button>
+            <button onclick="app.eventWithSum()" class="fluid ui button">Event with Sum</button>
+            <button onclick="app.eventWithSegment()" class="fluid ui button">Event with Segment</button>
+            <button onclick="app.eventWithSum_Segment()" class="fluid ui button">Even with Sum and Segment</button>
+
+            <button onclick="app.event()" class="fluid ui black button">All Events</button>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="Countly.js"></script>
+        <script type="text/javascript">
+
+            // // testing purpose only
+            // if(!window.device)
+            //     device = {};
+            //     device.platform = "android";
+            // //
+
+            app = {};
+            document.addEventListener("deviceready",function(){
+                Countly.init("http://128.199.55.79","46e1fd647e01f89e77e53007ab0e9aa59aa9d11f"); //50bffd5c8a7332b55f8aca45a1af0cd6e6f31b13  //http://104.131.45.10
+                                    //replace your server ip/url // replace it with your "App Key"
+                // app.onRegistrationId();
+                // app.test();
+                // alert("deviceready");
+            },false);
+            app.test = function(){
+                app.onRegistrationId();
+                app.sendSampleEvent();
+            }
+            app.event = function(){
+                setInterval(function(){
+                    app.sendSampleEvent();
+                },1000);
+            }
+            app.start = function(){
+                Countly.start();
+            }
+            app.stop = function(){
+                Countly.stop();
+            }
+
+            app.sendSampleEvent = function(){
+                app.basicEvent();
+                app.eventWithSum();
+                app.eventWithSegment();
+                app.eventWithSum_Segment();
+            }
+            app.basicEvent = function(){
+                // example for basic event
+                var events = {"eventName":"basic_event","eventCount":1};
+                Countly.sendEvent(events);
+            }
+            app.eventWithSum = function(){
+                // example for event with sum
+                var events = {"eventName":"event_sum","eventCount":1,"eventSum":"0.99"};
+                Countly.sendEvent(events);
+            }
+            app.eventWithSegment = function(){
+                // example for event with segment
+                var events = {"eventName":"event_segment","eventCount":1};
+                events.segments = {"Country" : "Turkey", "Age" : "28"};
+                Countly.sendEvent(events);
+            }
+            app.eventWithSum_Segment = function(){
+                // example for event with segment and sum
+                var events = {"eventName":"event_segment_sum","eventCount":1,"eventSum":"0.99"};
+                events.segments = {"Country" : "Turkey", "Age" : "28"};
+                Countly.sendEvent(events);
+            }
+            app.setUserData = function(){
+                // example for setUserData
+                var options = {};
+                options.name = "Trinisoft Technologies";
+                options.username = "trinisofttechnologies";
+                options.email = "trinisofttechnologies@gmail.com";
+                options.org = "Trinisoft Technologies Pvt. Ltd.";
+                options.phone = "+91 812 840 2946";
+                options.picture = "http://www.trinisofttechnologies.com/images/logo.png";
+                options.picturePath = "";
+                options.gender = "Male";
+                options.byear = 1989;
+                Countly.setUserData(options);
+            }
+            app.setloggingenabled = function(){
+                // example for setLoggingEnabled
+                Countly.setLoggingEnabled();
+            }
+
+            app.onRegistrationId = function(){
+                // Countly.messagingMode.TEST
+                // Countly.messagingMode.PRODUCTION
+                // Countly.mode = Countly.messagingMode.TEST;
+                // Countly.Push.onRegisterPushNotification();
+                Countly.initMessaging({
+                    "messageMode": Countly.messagingMode.TEST,
+                    "projectId": "881000050249"
+                });
+
+                // Tesint purpose only
+                Countly.onRegistrationId({
+                    "registrationId":"abcdefg",
+                    "mode":Countly.messagingMode.TEST,
+                    "projectId": "881000050249"
+                })
+            }
+        </script>
+    </body>
+</html>

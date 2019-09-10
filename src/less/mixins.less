@@ -1,0 +1,109 @@
+.transition(@property, @duration, @timing, @delay) {
+  transition          : @property @duration @timing @delay;
+  -webkit-transition  : @property @duration @timing @delay;  
+  -moz-transition     : @property @duration @timing @delay;
+  -ms-transition      : @property @duration @timing @delay; 
+  -o-transition       : @property @duration @timing @delay; 
+}
+.placeholderColor(@color) {
+    &::-webkit-input-placeholder {
+      color: @color;
+    }
+    &:-moz-placeholder {
+      color: @color;
+    }
+    &::-moz-placeholder {
+      color: @color;
+    }
+    &:-ms-input-placeholder {
+      color: @color;
+    }
+}
+
+.gradient(@startColor: #000, @endColor: #fff) {
+  background-color    : @startColor;
+  background          : -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background          : -webkit-linear-gradient(top, @startColor, @endColor);
+  background          : -moz-linear-gradient(top, @startColor, @endColor);
+  background          : -ms-linear-gradient(top, @startColor, @endColor);
+  background          : -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.gradientX3(@startColor: #000,  @middleColor: #777, @endColor: #fff) {
+  background-color    : @startColor;
+  background          : -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background          : -webkit-linear-gradient(top, @startColor, @middleColor, @endColor);
+  background          : -moz-linear-gradient(top, @startColor, @middleColor, @endColor);
+  background          : -ms-linear-gradient(top, @startColor, @middleColor, @endColor);
+  background          : -o-linear-gradient(top, @startColor, @middleColor, @endColor);
+}
+
+.radial( @direction: 50% 50%, @origin: #fff, @end: #000 ) {
+    background-color: fade(@white, 0);
+    background-image: -webkit-gradient(radial, @direction,0,@direction,200, from(@end), to(@origin));
+    background-image: -webkit-radial-gradient(@direction, @origin, @end);
+    background-image: -moz-radial-gradient(@direction, @origin, @end);
+    background-image: -o-radial-gradient(@direction, @origin, @end);
+    background-image: -ms-radial-gradient(@direction, @origin, @end);
+    background-image: radial-gradient(@direction, @origin, @end);
+}
+
+.table {
+  display: table !important;
+  vertical-align: center !important;
+} .tableCell {
+  display: table-cell !important;
+  vertical-align: center !important;
+}
+
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
+}
+
+.animation { 
+  -webkit-animation-duration: 2s; 
+  animation-duration: 2s; 
+  -webkit-animation-fill-mode: both; 
+  animation-fill-mode: both; 
+  -webkit-animation-timing-function: ease-in-out; 
+  animation-timing-function: ease; 
+  animation-iteration-count: infinite; 
+  -webkit-animation-iteration-count: infinite; 
+}
+.animationOnce { 
+  -webkit-animation-duration: 1s; 
+  animation-duration: 1s; 
+  -webkit-animation-fill-mode: both; 
+  animation-fill-mode: both; 
+  -webkit-animation-timing-function: ease-in-out; 
+  animation-timing-function: ease; 
+  animation-iteration-count: 1; 
+  -webkit-animation-iteration-count: 1; 
+} 
+@-webkit-keyframes showHide { 
+  0%    { opacity: 0; }
+  50%   { opacity: 1; }
+  100%  { opacity: 0; }
+} 
+@keyframes showHide { 
+  0%    { opacity: 0; }
+  50%   { opacity: 1; }
+  100%  { opacity: 0; }
+} 
+.showHide { 
+  -webkit-animation-name: showHide; 
+  animation-name: showHide; 
+}
+
+.rotate(@deg) {
+  -webkit-transform: rotate(@deg);
+  -moz-transform:    rotate(@deg);
+  -ms-transform:     rotate(@deg);
+  -o-transform:      rotate(@deg);
+}

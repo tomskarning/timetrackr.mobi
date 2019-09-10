@@ -1,0 +1,1387 @@
+/* MAIN.LESS */
+
+/* START OF IMPORTS */
+@import "bower_components/bootstrap-less-only/less/bootstrap.less";
+@import "mixins.less";
+/* END OF IMPORTS */
+
+
+/* START OF FONTS */
+@import "glyphicons.less";
+@import "glyphicons-social.less";
+@import "glyphicons-filetypes.less";
+
+@font-face {
+  font-family: "Abel";
+  src: url("../fonts/Abel-Regular.ttf") format("truetype");
+}@font-face {
+  font-family: "Hack";
+  src: url("../fonts/hack-regular-webfont.ttf") format("truetype");
+}
+/* END OF FONTS */
+
+
+/* START OF VARIABLES */
+// Triadic: http://jimmyking.me/colors.less/
+@distance           : 120; // Degrees between the two new colors
+@mainColor          : rgba(153, 0, 0, 0.75);
+@secColor           : fade(spin(@mainColor, (180 - (@distance * 0.5))), 50%);
+@thiColor           : fade(spin(@mainColor, (180 + (@distance * 0.5))), 50%);
+
+@white              : rgba(255, 255, 255, 1);
+@black              : rgba(0, 0, 0, 1);
+@lightGrey          : rgba(233, 233, 233, 1);
+@darkGrey           : rgba(188, 188, 188, 1);
+@gold               : rgba(255, 215, 0, 1);
+@silver             : rgba(192, 192, 192, 1);
+@bronze             : rgba(205, 127, 50, 1);
+
+@mainBorder         : 2px solid darken(@mainColor, 10%);
+@secBorder          : 2px solid darken(@secColor, 10%);
+@thiBorder          : 2px solid darken(@thiColor, 10%);
+@whiteBorder        : 2px solid darken(@white, 10%);
+@blackBorder        : 2px solid lighten(@black, 10%);
+@lightGreyBorder    : 2px solid darken(@lightGrey, 10%);
+@darkGreyBorder     : 2px solid lighten(@darkGrey, 10%);
+@goldBorder         : 2px solid darken(@gold, 10%);
+
+@background: "../img/Working-on-a-Project-from-Above.jpg";
+@standardBorderRadius: 25px;
+/* START OF VARIABLES */
+
+
+/* START OF CORNERSTONE */
+* {
+  -webkit-overflow-scrolling: touch !important;
+  -webkit-font-smoothing: antialiased !important;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none; 
+}
+html, body {
+  overflow: hidden !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  background-image: url(@background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: @mainColor;
+  font-family: -apple-system, "Helvetica Neue", "Lucida Grande", sans-serif;
+  color: @black;
+  font-size: 20px;
+}
+/* END OF CORNERSTONE */
+
+/* START OF IN-APP NOTIFICATIONS */
+#credit-area {
+  * {
+    font-size: 12px !important;
+  }
+  div.section {
+      padding: 10px;
+      margin: 10px;
+      border: solid 1px #eee;
+      background: #fff;
+      box-shadow: 0px 2px 3px #eee;
+      text-align: left;
+      
+      a {
+        text-decoration: none !important;
+        font-weight: bold;
+      }
+  }
+  small {
+      font-weight: 400;
+      font-size: .8em;
+      color: #999;
+  }
+}
+#privacyPolicy, #termsAndConditions {
+  display: relative;
+  width: 50%;
+  float: left;
+  word-wrap: break-word;
+  font-size: 12px;
+  border-right: 1px solid @black;
+  font-family: "Hack" !important;
+  text-align: left;
+  padding: 5px;
+  
+  * {
+    font-family: "Hack" !important;
+    font-size: 12px !important;
+    padding: 0px;
+  } h1 {
+    font-size: 16px !important;
+  } h2 {
+    font-size: 15px !important;
+  } h3 {
+    font-size: 14px !important;
+  } h4 {
+    font-size: 13px !important;
+  } h5, h6 {
+    font-size: 12px !important;
+  }
+}
+#termsAndConditions {
+  width: 50%;
+  text-align: right;
+  float: right;
+  border-right: 0px;
+  border-left: 1px solid @black;
+  padding: 5px;
+}
+#trackerWrapper, #infoWrapper {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  color: @black;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: fade(@white, 95%);
+  z-index: -2;
+  
+  #tracker, #info {
+    display: table;
+    vertical-align: middle;
+    position: absolute;
+    top: 37.5%;
+    left: 0px;
+    height: 25%;
+    width: 100%;
+    z-index: 4;
+    
+    #trackerContent, #infoContent {
+      display: table-cell;
+      vertical-align: middle;
+      z-index: 5;
+      
+      h2 {
+        color: @black;
+      }
+      
+      &#trackerContent {
+        font-size: 22px;
+        color: @secColor;
+      }
+      
+      #moneyEarned {
+        color: @secColor;
+      }
+      
+      #workDuration {
+        color: @secColor;
+      }
+      
+      #sendSmsNow {
+        display: none;
+        font-size: 32px;
+        color: @thiColor;
+        margin-right: 2%;
+      }
+      #sendEmailNow {
+        display: none;
+        font-size: 32px;
+        color: @thiColor;
+        margin-left: 2%;
+      }
+      
+      #gfx {
+        position: relative;
+        
+        .glyphicons-piggy-bank {
+          color: fade(@mainColor, 100%);
+          font-size: 50px;
+          position: relative;
+          z-index: 7;
+        }
+        
+        .goldCoin {
+          width: 10px;
+          position: absolute;
+          z-index: 6 !important;
+          left: 50%;
+          margin-left: -5px;
+          top: 50%;
+          margin-top: -5px;
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+  
+  #info {
+    height: 100%;
+    top: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    #infoContent {
+      .social, .glyphicons {
+        font-size: 32px;
+      }
+    }
+    
+    a {
+      color: @thiColor;  
+    }
+  }
+}
+#infoWrapper {
+  background-color: fade(@white, 95%);
+  font-family: "Hack";
+  font-size: 12px;
+}
+/* END OF IN-APP NOTIFICATIONS */
+
+
+/* START OF HEADERVIEW */
+header {
+  text-align: center;
+  border: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 55px;
+  background-color: @mainColor;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  
+  h1 {
+    font-size: 25px !important;
+    color: @white;
+    text-align: center;
+    font-family: Abel;
+    
+    .appNameEnd {
+      color: @black;
+    }
+  }
+}
+/* END OF HEADERVIEW */
+
+
+
+/* START OF APPVIEW */
+#appView {
+  display: table;
+  height: 100%;
+  width: 100%;
+  color: @black;
+  text-align: center;
+  padding: 0px;
+  background-color: fade(@white, 25%);
+  
+  .appViewHeaders {
+    margin: 0px;
+  }
+  
+  h2 {
+    color: @black;
+  }
+  
+  span {
+    color: @black;
+  }
+  
+  .appViewContent {
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+    color: @black;
+    padding: 0px;
+    
+    &.active {
+      display: table-cell;
+    }
+  }
+}
+/* END OF APPVIEW */
+
+
+/* START OF FOOTERVIEW */
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  height: 50px;
+  padding: 0px;
+  text-align: center !important;
+  background-color: @mainColor;
+  border: 0px;
+  color: @white;
+  font-size: 20px;
+  
+  nav {
+    height: 50px;
+    ul {
+      height: 50px;
+      display: inline;
+      list-style-type: none;
+      padding: 0px;
+      
+      li {
+        width: 25%;
+        display: inline-block;
+        margin: 0px;
+        float: left;
+        padding-top: 7px;
+        .transition(background-color 0.250s);
+        
+        &.active {
+          background-color: fade(@black, 50%);
+        }
+        
+        .glyphicons {
+          position: relative;
+          top: 0px;
+          font-size: 35px;
+          color: @white;
+          margin: 0px;
+          
+          &.glyphicons-star {
+            margin-top: -4px;
+          }
+          
+          &.premiumLink {
+            color: @gold;
+          }
+          
+          #timetrackrIcon {
+            height: 50px;
+            margin-top: -7px;
+            padding-top: -5px;
+          }
+        }
+        
+        .tab-label  {
+          position: relative;
+          top: -12px;
+          color: @white !important;
+          text-align: center;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+  
+  .footerContent {
+    
+    &.active {
+      display: block;
+    }
+  }
+}
+/* END OF FOOTERVIEW */
+
+
+/* START OF HOME */
+#activeWork {
+  width: 85%;
+  margin: auto;
+  margin-bottom: -7px;
+  padding-bottom: 7px;
+  display: block;
+  font-weight: bold;
+  color: @black !important;
+  border-radius: 10px;
+}
+#calc {
+  background-color: fade(@white, 75%);
+  border: @whiteBorder;
+  position: relative;
+  text-transform: uppercase;
+  color: @black;
+  font-size: 40px;
+  .border-radius(@standardBorderRadius);
+  width: 95%;
+  height: 25%;
+  margin: auto;
+  margin-bottom: 5%;
+  text-align: center;
+  
+  &.disabled {
+    display: block;
+    opacity: 0.25;
+  }
+  
+  #stampIn {
+    display: inline-block;
+    margin: auto;
+    margin-top: 14%;
+    font-weight: bold;
+    color: @mainColor;
+    
+    &.running {
+      font-family: "Hack", monospace;
+    }
+  }
+  
+  #tapToStop {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    width: 225px;
+    top: 80%;
+    left: 50%;
+    margin-left: -112.5px;
+    
+    color: @secColor;
+  }
+}
+#moreValves {
+  div {
+    #calc;
+    .border-radius(10px);
+    display: inline-block;
+    position: relative;
+    width: 40%;
+    height: 25%;
+    font-size: 18px;
+    margin: 0px 25/2px;
+    font-weight: bold;
+    padding-top: 10px;
+    text-transform: auto;
+    
+    span {
+      color: @black;
+      
+      &#monthlySumContent, &#monthlyHoursContent {
+        font-family: "Hack", monospace;
+        color: @secColor;
+      }
+    }
+    
+    .glyphicons {
+      display: inline-block;
+      font-size: 25px;
+      color: @thiColor;
+    }
+  }
+  #moreValvesTitle {
+    width: 75%;
+    margin: auto;
+    margin-bottom: -4px;
+    padding-bottom: 4px;
+    display: block;
+    color: @black !important;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+}
+/* END OF HOME */
+  
+  
+/* START OF SETTINGS */
+.settingsOn {
+    color: @thiColor !important;
+  }
+#settings {
+  text-align: center;
+  vertical-align: middle;
+  
+  #settingsBar, #settingsBarBottomLeft, #settingsBarBottomRight, #settingsBarPremium {
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    height: 40px;
+    
+    .settingsDiv  {
+      display: inline-block;
+      height: 40px;
+      text-align: center;
+      margin: auto 5px;
+      
+      .glyphicons {
+        color: @white;
+        margin: 0px;
+        text-align: center;
+        
+        @media screen and (max-height: 640px) {
+            font-size: 18px !important;
+        }
+        
+        &#add {
+          position: relative;
+          z-index: 2;
+          margin-top: -15px;
+          font-size: 35px !important;
+        }
+      }
+    }
+  }
+  
+  #settingsBarPremium {
+    top: 75px;
+    font-size: 32px;
+    
+    @media screen and (max-height: 640px) {
+      top: 60px;
+    }
+    
+    .settingsDiv  {
+      
+      .glyphicons, .filetypes {
+        &#csv {
+          display: none;
+          color: fade(@gold, 100%) !important;
+          @media screen and (max-height: 640px) {
+            font-size: 25px !important;
+          }
+        }
+        
+        &#gps {
+          display: none;
+          color: fade(@gold, 25%) !important;
+          
+          @media screen and (max-height: 640px) {
+            font-size: 25px !important;
+          }
+          
+          &.settingsOn {
+            color: fade(@gold, 100%) !important;
+          }
+        }
+      }
+    }
+  }
+  
+  #settingsBarBottomRight {
+    position: absolute;
+    height: 50px;
+    bottom: 50px;
+    width: 50%;
+    left: auto;
+    right: 0%;
+    font-size: 25px !important;
+    text-align: right;
+    .settingsDiv  {
+      
+      .glyphicons {
+        &#sound {
+          color: fade(@thiColor, 25%);
+        }
+        
+        &#gps {
+          display: none;
+          color: fade(@gold, 25%) !important;
+          
+          &.settingsOn {
+            color: fade(@gold, 100%) !important;
+          }
+        }
+      }
+    }
+  }
+  
+  #settingsBarBottomLeft {
+    position: absolute;
+    width: 50%;
+    height: 50px;
+    bottom: 50px;
+    left: 0%;
+    font-size: 25px;
+    line-height: 25px;
+    padding-left: 10px;
+    text-align: left;
+    white-space: nowrap;
+    
+    .settingsDiv  {
+      text-align: left;
+      
+      &#restore {
+        position: relative;
+        z-index: 2;
+        color: @white;
+        font-size: 16px;
+        
+        #restoreText {
+          color: @white;
+          margin-left: 5px;
+        }
+        
+        .glyphicons {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+/* END OF SETTINGS */
+
+
+/* START OF PREMIUM */
+.premiumGold {
+  color: @gold !important;
+}
+#premium, #removeAds {
+  .premiumInfo {
+    padding: 2.5%;
+    margin: 0px;
+    font-size: 16px;
+    
+    @media screen and (max-height: 640px) {
+      font-size: 12px;
+    }
+    
+    .premiumWrapper {
+      display: table;
+      width: 100%;
+      margin: 2.5px 0px;
+      
+      div {
+        margin: 0px;
+        padding: 5px;
+        display: inline-block;
+        height: 100%;
+        display: table-cell;
+        
+        &.premiumImg {
+          width: 25%;
+          background-color: fade(@white, 75%);
+          border: @whiteBorder;
+          border-right: none;
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+          vertical-align: middle;
+          
+          .glyphicons, .filetypes {
+            display: relative;
+            font-size: 50px;
+            color: @thiColor;
+            margin-top: auto;
+          }
+        }
+        
+        &.premiumDesc {
+          width: 75%;
+          text-align: left;
+          background-color: fade(@white, 75%);
+          border: @whiteBorder;
+          border-left: none;
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+        }
+      }
+    }
+  }
+}
+.showcaseWrapper {
+  width: 50%;
+  height: 32px;
+  margin: auto;
+  line-height: 32px;
+  margin-top: 15px;
+  
+  .showcase {
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    
+    .showcaseButton {
+      display: inline-block;
+      width: 25%;
+      background-color: @secColor;
+      float: left;
+      height: 100%;
+      font-size: 27px;
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+      
+      &.showcaseButtonRemoveAds {
+        background-color: fade(@silver, 75%);
+      }
+        
+      .glyphicons {
+        color: @white !important;
+      }
+    }
+    .showcaseBuy {
+      display: inline-block;
+      width: 75%;
+      background-color: @black;
+      color: @white !important;
+      height: 100%;
+      font-size: 18px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      
+      a {
+        color: @white !important;
+        
+        &:hover, &:active, &:focus {
+          color: @white;
+        }
+      }
+    }
+  }
+}
+/* END OF PREMIUM */
+
+
+#status {
+  width: 100%;
+  word-break: break-all;
+}
+
+/* BUTTONS */
+.btn {
+  font-size: 20px;
+}
+.showcaseBuy {
+  
+}
+
+/* FORMS */
+.form-group {
+  position: relative;
+  background-color: transparent;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 15px;
+  font-size: 20px !important;
+}
+.input-group {
+  margin: 2px 0px;
+  
+  &.settingsExtras {
+    position: relative;
+    margin: auto;
+    margin-top: -2.5px;
+    text-align: center;
+    width: 100%;
+    border-radius: 3px;
+    padding: 0px;
+    
+    span {
+      display: inline-block;
+      margin: 0px;
+      color: @white !important;
+      width: 33%;
+      
+      &.delete {
+        color: rgba(178, 34, 34, 0.75) !important;
+        text-align: left;
+      }
+      
+      &.activate {
+        color: @thiColor !important;
+        text-align: right;
+      }
+      
+      .glyphicons {
+        color: @thiColor !important;
+        width: auto;
+        margin: 0px;
+        margin-top: 1px;
+      }
+    }
+  }
+}
+.input-group-addon {
+  background-color: fade(@white, 75%);
+  border: 0px !important;
+  font-size: 18px;
+  
+  &.currency {
+    font-size: 20px;
+    background-color: fade(@white, 75%);
+    color: @thiColor;
+    font-family: "Hack";
+  }
+  
+  .glyphicons {
+    color: @thiColor !important;
+  }
+}
+.form-control, .form-control:disabled {
+  font-size: 20px;
+  background-color: fade(@white, 75%) !important;
+  border: 0px !important;
+  color: @black !important;
+  opacity: 1 !important;
+  -webkit-box-sizing: border-box !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  sizing: border-box !important;
+  z-index: 1 !important;
+  padding: 2px;
+  box-shadow: none !important;
+  
+  .placeholderColor(@darkGrey) !important;
+}
+.form-control {
+  -webkit-user-select: auto !important;
+  
+  &:disabled {
+    -webkit-user-select: none !important;
+  }
+}
+
+/* MISC */
+.disabled {
+  opacity: 0.50;
+}
+.hidden {
+  display: none;
+}
+
+/* CALENDAR */
+#calendar {
+  position: relative;
+  left: 0px;
+  width: 100%;
+  margin: 0px !important;
+  padding: 0%;
+  
+  * {
+    .transition(all 0.250s);
+  }
+  
+  .calendarMonthControls {
+    font-size: 14px;
+    position: absolute;
+    top: 55px;
+    color: @black;
+    
+    &#prevMonth {
+      left: 0px;
+      line-height: 35px;
+      
+      .glyphicons {
+        font-size: 35px;
+      }
+    }
+    &#currentMonth {
+      left: 50%;
+      margin-left: -12.5%;
+      width: 25%;
+      overflow: visible;
+      text-align: center;
+      line-height: 35px;
+    }
+    &#nextMonth {
+      right: 0px;
+      line-height: 35px;
+      
+      .glyphicons {
+        font-size: 35px;
+      }
+    }
+  }
+  
+  #calendarTitle {
+    .glyphicons {
+      display: inline;
+      font-size: 20px;
+    }
+  }
+  #calendarCircle {
+    z-index: 3;
+    position: relative;
+    border-radius: 100%;
+    background-color: fade(@white, 75%);
+    border: @whiteBorder;
+    width: 95%;
+    margin: auto;
+    margin-left: 2.5%;
+    
+    li {
+      z-index: 5;
+      position: absolute;
+      display: inline-block;
+      width: 8%;
+      height: 8%;
+      padding-top: 3px;
+      font-size: 18px;
+      font-family: "Hack", monospace;
+      text-align: center;
+      
+      @media screen and (max-height: 640px) {
+        font-size: 14px !important;
+      }
+      
+      &.current {
+        color: @thiColor;
+        border-radius: 100%;
+      }
+      
+      &.active {
+        background-color: @thiColor;
+        color: @white;
+        border-radius: 100%;
+      }
+      
+      &.disabled {
+        opacity: 0.25 !important;
+      }
+      
+    } li:nth-child(1) {
+      z-index: 1;
+      height: auto;
+      width: 40%;
+      margin-left: -20%;
+      left: 50%;
+      top: 1%;
+      text-align: center;
+      text-transform: uppercase;
+      border: none;
+      color: @black;
+      line-height: 14px;
+      font-weight: bold;
+      font-family: "Helvetica Neue";
+      font-size: 16px;
+      
+      @media screen and (max-height: 640px) {
+        font-size: 12px !important;
+      }
+    } li:nth-child(2) {
+      top: 5%;
+      left: 65%;
+    } li:nth-child(32) {
+      top: 5%;
+      left: 27%;
+    } li:nth-child(3) {
+      top: 9%;
+      left: 72%;
+    } li:nth-child(31) {
+      top: 9%;
+      left: 20%;
+    } li:nth-child(4) {
+      top: 14%;
+      left: 78%;
+    } li:nth-child(30) {
+      top: 14%;
+      left: 14%;
+    } li:nth-child(5) {
+      top: 20%;
+      left: 83%;
+    } li:nth-child(29) {
+      top: 20%;
+      left: 9%;
+    } li:nth-child(6) {
+      top: 27%;
+      left: 87%;
+    } li:nth-child(28) {
+      top: 27%;
+      left: 5%;
+    } li:nth-child(7) {
+      top: 34%;
+      left: 90%;
+    } li:nth-child(27) {
+      top: 34%;
+      left: 2%;
+    } li:nth-child(8) {
+      top: 42%;
+      left: 91%;
+    } li:nth-child(26) {
+      top: 42%;
+      left: 1%;
+    } li:nth-child(9) {
+      top: 50%;
+      left: 91%;
+    } li:nth-child(25) {
+      top: 50%;
+      left: 1%;
+    } li:nth-child(10) {
+      top: 58%;
+      left: 90%;
+    } li:nth-child(24) {
+      top: 58%;
+      left: 3%;
+    } li:nth-child(11) {
+      top: 66%;
+      left: 87%;
+    } li:nth-child(23) {
+      top: 66%;
+      left: 6%;
+    } li:nth-child(12) {
+      top: 73%;
+      left: 83%;
+    } li:nth-child(22) {
+      top: 73%;
+      left: 10%;
+    } li:nth-child(13) {
+      top: 79%;
+      left: 78%;
+    } li:nth-child(21) {
+      top: 79%;
+      left: 15%;
+    } li:nth-child(14) {
+      top: 84%;
+      left: 72%;
+    } li:nth-child(20) {
+      top: 84%;
+      left: 21%;
+    } li:nth-child(15) {
+      top: 88%;
+      left: 64.5%;
+    } li:nth-child(19) {
+      top: 88%;
+      left: 28.5%;
+    } li:nth-child(16) {
+      top: 90.5%;
+      left: 56%;
+    } li:nth-child(18) {
+      top: 90.5%;
+      left: 37%;
+    } li:nth-child(17) {
+      top: 91.5%;
+      left: 46.5%;
+    }
+    
+    #calendarCirclePointer {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      border-radius: 100%;
+      top: 10%;
+      left: 10%;
+      z-index: 2;
+      //.gradient(fade(@white, 25%) 50%, fade(@black, 25%) 100%);
+      
+      .glyphicons-chevron-right {
+        position: relative;
+        font-size: 15px;
+        .rotate(-90deg);
+        color: @thiColor;
+      }
+    }
+    
+    #prevEntry {
+      position: absolute;
+      top: 15%;
+      left: 30%;
+      color: @thiColor;
+      z-index: 16;
+      font-size: 32px;
+      margin: 0px;
+      
+      @media screen and (max-height: 640px) {
+        font-size: 18px !important;
+        top: 20%;
+      }
+    }
+    #nextEntry {
+      position: absolute;
+      top: 15%;
+      right: 30%;
+      color: @thiColor;
+      z-index: 16;
+      font-size: 32px;
+      margin: 0px;
+      
+      @media screen and (max-height: 640px) {
+        font-size: 18px !important;
+        top: 20%;
+      }
+    }
+    
+    .calendarBottom {
+      display: none;
+      font-family: "Helvetica Neue";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -37.5%;
+      margin-top: -37.5%;
+      width: 75%;
+      height: 75% !important;
+      text-align: center;
+      font-size: 25px;
+      padding-top: 50%;
+      border-radius: 100%;
+      overflow: hidden;
+      z-index: 14;
+      
+      #gpsShow {
+        position: relative;
+        width: 32%;
+        display: inline-block;
+        background-color: @mainColor;
+        text-align: right;
+        height: 50% !important;
+        margin: 0px;
+        margin-right: -2.5px;
+        padding-top: 4%;
+        padding-right: 7.5%;
+        color: fade(@white, 95%);
+        z-index: 15;
+      }
+      #sendSms {
+        position: relative;
+        width: 32%;
+        display: inline-block;
+        background-color: @mainColor;
+        text-align: center;
+        height: 50% !important;
+        margin: 0px;
+        margin-left: -2.5px;
+        margin-right: -2.5px;
+        padding-top: 4%;
+        padding-left: 2%;
+        color: fade(@white, 95%);
+        z-index: 15;
+      }
+      #sendEmail {
+        position: relative;
+        width: 32%;
+        display: inline-block;
+        background-color: @mainColor;
+        text-align: left;
+        height: 50% !important;
+        margin: 0px;
+        margin-left: -2.5px;
+        padding-top: 4%;
+        padding-left: 7.5%;
+        color: fade(@white, 95%);
+        z-index: 15;
+      }
+    }
+    
+    #calendarCircleInner {
+      position: relative;
+      border-radius: 100%;
+      //.radial(50% 50%, fade(@white, 25%), fade(@white, 75%));
+      border: @whiteBorder;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      margin: auto;
+      z-index: 1;
+      text-align: center;
+      overflow: hidden !important;
+      
+      #calendarDayOfMonth {
+        position: relative;
+        z-index: 6;
+        font-family: "Hack", monospace;
+        margin-top: 5px;
+        color: @thiColor;
+        font-size: 50px;
+        width: 100%;
+        margin: auto;
+        margin-bottom: -20px;
+      }
+      #calendarDay {
+        position: relative;
+        z-index: 6;
+        font-family: "Hack", monospace;
+        color: @mainColor;
+        font-size: 20px;
+        text-transform: uppercase;
+        width: 100%;
+        margin: auto;
+      }
+      
+      #entriesCount {
+        color: @secColor;
+        font-family: "Hack";
+        font-size: 14px;
+        position: absolute;
+        top: 92.5%;
+        width: 100%;
+        text-align: center;
+        
+        * {
+          color: @secColor;
+        }
+      }
+      
+      #calendarInfo {
+        .transition(none 0s);
+        
+        * {
+          .transition(none 0s);
+        }
+        font-family: "Hack";
+        
+        .gpsMap {
+          display: none;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          
+          &.active {
+            display: block;
+          }
+        }
+        
+        .sendContent {
+          display: none;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 100%;
+          height: 100%;
+          background-color: fade(@white, 95%);
+          
+          &.active {
+            display: table;
+          }
+          
+          .glyphicons {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 32px;
+          }
+        }
+        .calendarEntry {
+          display: none;
+          padding-left: 4%;
+          
+          &.active {
+            display: block;
+          }
+          
+          .workName {
+            display: inline-block;
+            width: 88%;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          
+          .glyphicons {
+            padding-top: 0.75%;
+            margin-right: 1%;
+            color: @thiColor;
+          }
+          
+          .calendarWorkDuration, .calendarWorkPay {
+            color: @secColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-device-width: 768px) {
+  body {
+    font-size: 25px !important;
+  }
+  
+  // Tracker.
+  #moreValves {
+    font-family: 20px !important;
+  }
+  
+  // Calendar.
+  #prevMonthText, #currentMonthText, #nextMonthText {
+    font-size: 25px !important;
+  }
+  #calendarMonthAndYear {
+    font-size: 25px !important;
+    line-height: 25px !important;
+  }
+  .cw {
+    font-size: 32px !important;
+    padding-top: 10px !important;
+  }
+  #gpsShow, #sendSms, #sendEmail {
+    font-size: 40px !important;
+  }
+  #calendarPointer {
+    font-size: 25px !important;
+  }
+  #entriesCount {
+   font-size: 20px !important;
+  }
+  
+  // Settings.
+ #settingsBarBottomLeft, #settingsBarBottomRight {
+    * {font-size: 25px !important;}
+  }
+}
+
+@media screen and (max-device-width: 374px) {
+  body {
+    font-size: 16px !important;
+  }
+  
+  // Tracker.
+  #moreValves {
+    font-family: 14px !important;
+  }
+  #stampIn {
+    margin-top: 7% !important;
+  }
+  #tapToStop {
+    top: 75% !important;
+  }
+  
+  // Calendar.
+  #calendarCircle {
+    width: 80% !important;
+    margin-left: 10% !important;
+  }
+  #prevMonthText, #currentMonthText, #nextMonthText {
+    font-size: 16px !important;
+  }
+  #calendarMonthAndYear {
+    font-size: 10px !important;
+    line-height: 10px !important;
+  }
+  .cw {
+    font-size: 16px !important;
+    padding-top: 2px !important;
+  }
+  #gpsShow, #sendSms, #sendEmail {
+    font-size: 20px !important;
+    padding-top: 2% !important;
+  }
+  #calendarPointer {
+    font-size: 16px !important;
+  }
+  #entriesCount {
+   font-size: 12px !important;
+  }
+  .calendarBottom {
+    padding-top: 55% !important;
+  }
+  
+  // Settings.
+  #settingsBarPremium, #settingsBarBottomLeft, #settingsBarBottomRight, .glyphicons-restart, #restoreText {
+    font-size: 16px !important;
+    * {
+      font-size: 16px !important;
+    }
+  }
+  #settingsBarBottomLeft {
+    line-height: 16px !important;
+  }
+  #restore {
+    margin-top: 10px !important;
+  }
+  
+  // Premium & Remove Ads.
+  .premiumImg {
+    .glyphicons {
+      font-size: 25px !important;
+    }
+  }
+  .premiumDesc {
+    font-size: 10px !important;
+  }
+  .showcaseButton {
+    padding-top: 4px;
+    font-size: 22px !important;
+  }
+  .showcaseBuy {
+    font-size: 16px !important;
+  }
+}

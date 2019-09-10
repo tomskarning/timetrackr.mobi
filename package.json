@@ -1,0 +1,24 @@
+{
+  "name": "Stampr",
+  "version": "0.0.0",
+  "devDependencies": {
+    "connect-livereload": "^0.5.3",
+    "grunt": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-htmlmin": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-phantom": "latest",
+    "grunt-shell": "^1.1.2",
+    "grunt-uncss": "latest",
+    "grunt-xmlmin": "latest",
+    "jshint-stylish": "latest",
+    "grunt-json-minify": "latest",
+    "load-grunt-tasks": "^latest"
+  }
+}

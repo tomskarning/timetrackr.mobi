@@ -1,0 +1,27 @@
+{{#each work}}
+<div class="prefSection prefSectionWork">
+    <div class="form-group" id="form-group{{id}}">
+        <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicons glyphicons-suitcase"></span></div>
+            <input class="form-control firstSettings" id="workName{{id}}" data-where="{{id}}" data-what="name" type="text" value="{{name}}" placeholder="{{translateWork 'Work'}}" />
+        </div>
+        
+        <div class="input-group">
+            <div class="input-group-addon"><span class="glyphicons glyphicons-money"></span></div>
+            <input class="form-control firstSettings" id="workSalary{{id}}" data-where="{{id}}" data-what="salary" type="number" value="{{salary}}" placeholder="{{translateWork 'Hourly Salary'}}" step="any" />
+            <div class="input-group-addon currency" >,-</div>
+        </div>
+        
+        <div class="input-group settingsExtras">
+            <span class="delete" data-where="{{id}}">{{translateWork 'Delete'}}</span>
+            
+            <span class="activate" data-id="{{id}}">{{translateWork 'Track'}} <span class="glyphicons glyphicons-check glyphicons-unchecked"></span></span>
+        </div>
+    </div>
+</div>
+{{/each}}
+{{#unless work}}
+<div class="prefSection prefSectionWork">
+    {{standardText}}
+</div>
+{{/unless}}

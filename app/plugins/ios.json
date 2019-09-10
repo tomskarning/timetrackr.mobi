@@ -1,0 +1,160 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"Hello\"><param name=\"ios-package\" value=\"HWPHello\" /></feature>",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Sms\"><param name=\"ios-package\" value=\"Sms\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Globalization\"><param name=\"ios-package\" value=\"CDVGlobalization\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Safari\"><param name=\"ios-package\" value=\"Safari\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"ios-package\" value=\"APPEmailComposer\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CountlyCordova\"><param name=\"ios-package\" value=\"CountlyCordova\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "framework": {
+                "parents": {
+                    "MessageUI.framework": [
+                        {
+                            "xml": true,
+                            "count": 2
+                        }
+                    ],
+                    "AdSupport.framework": [],
+                    "AudioToolbox.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "AVFoundation.framework": [],
+                    "CoreGraphics.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "CoreLocation.framework": [
+                        {
+                            "xml": false,
+                            "count": 1
+                        }
+                    ],
+                    "CoreTelephony.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "EventKit.framework": [],
+                    "EventKitUI.framework": [],
+                    "Foundation.framework": [],
+                    "QuartzCore.framework": [],
+                    "StoreKit.framework": [],
+                    "SystemConfiguration.framework": [],
+                    "UIKit.framework": [],
+                    "CoreData.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "OpenGLES.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSAppTransportSecurity": [],
+                    "NSLocationWhenInUseUsageDescription": [
+                        {
+                            "xml": "<string />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.example.hello": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "com.jsmobile.plugins.sms": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "cordova-plugin-ios-safari": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "de.appplant.cordova.plugin.email-composer": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        },
+        "ly.count.cordova": {
+            "PACKAGE_NAME": "us.elirio.d.timetrackr-premium"
+        }
+    },
+    "dependent_plugins": {}
+}

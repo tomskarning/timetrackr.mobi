@@ -1,0 +1,19 @@
+{
+  "name": "Timetrackr.mobi",
+  "version": "0.1.0",
+  "authors": [
+    "Tom Andre Skarning <m@elirio.us>"
+  ],
+  "description": "",
+  "license": "",
+  "homepage": "http://d.elirio.us/",
+  "dependencies": {
+    "bootstrap-javascript": "~3.0.2",
+    "handlebars": "3.0.3",
+    "iscroll": "~5.1.3",
+    "jquery": "~2.1.4"
+  },
+  "devDependencies": {
+    "bootstrap-less-only": "~3.3.4"
+  }
+}

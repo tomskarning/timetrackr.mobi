@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <title>Timetrackr.mobi - Track your income!</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        
+        <!-- Cordova. -->
+        <script type="application/javascript" src="cordova.js"></script>
+        
+        <!-- JavaScript -->
+        <script type="application/javascript" src="js/main.js" async></script>
+    </head>
+    <body>
+
+        <!-- START OF HEADERVIEW -->
+        <header id="headerView" class="navbar navbar-fixed-top">
+            <h1>Timetrackr<span class="appNameEnd">.mobi</span></h1>
+        </header>
+        <!-- END OF HEADERVIEW -->
+
+        <!-- START OF APPVIEW -->
+        <section id="appView">
+
+            <!-- START OF TRACKER RESULTS -->
+            <div id="trackerWrapper">
+                <div id="tracker">
+                    <div id="trackerContent">
+                        <div id="gfx">
+                            <span class="glyphicons glyphicons-piggy-bank"></span>
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin1" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin2" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin3" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin4" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin5" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin6" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin7" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin8" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin9" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin10" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin11" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin12" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin13" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin14" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin15" />
+                            <img src="img/GoldCoinPNGSequence0001.png" alt="Gold Coin" class="goldCoin" id="goldCoin16" />
+                        </div>
+                        <h2 id="trackerHeader">Good Work!</h2>
+                        <span id="trackerText1">You just earned</span> <span id="moneyEarned"></span>
+                        <br />
+                        <span id="trackerText2">by working</span> <span id="workDuration"></span>.
+                        <br />
+                        <br />
+                        <span id="sendSmsNow" class="glyphicons glyphicons-sms"></span>
+                        <span id="sendEmailNow" class="glyphicons glyphicons-message-full"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF TRACKER RESULTS -->
+
+            <!-- START OF INFO -->
+            <div id="infoWrapper">
+                <div id="info">
+                    <div id="infoContent">
+                        <p>
+                            <br />
+                            <b><u id="infoHeader">Developer &amp; Designer</u></b>
+                            <br />
+                            <a target="_blank" href="http://tom.andre.skarning.no/">Tom.Andre.Skarning.no</a>
+                            <br />
+                            <br />
+                            © 2015 <a target="_blank" href="https://d.elirio.us/">Delirious Ltd</a>.
+                            <br />
+                            <span id="allRightsReserved">All Rights Reserved.</span>
+                            <br />
+                            <br />
+                            <a target="_blank" href="http://twitter.com/tomskarning/"><span class="social social-twitter"></span></a>
+                            <a target="_blank" href="http://facebook.com/delirious.ltd/"><span class="social social-facebook"></span></a>
+                            <br />
+                        </p>
+                        <br />
+                        Attributions, Privacy Policy and Terms and Conditions are also available at <a target="_blank" href="http://timetrackr.mobi/#footer">http://timetrackr.mobi/</a>.
+                        <br /><br />
+                        <b><u id="infoHeader">Attributions</u></b>
+                        <p>
+                            The development of this application was made possible using the following components:
+                        </p>
+                        <div id="credit-area">
+                            <div class="section padded">
+                                <h3>[Font] <a target="_blank" href="http://sourcefoundry.org/hack/">Hack</a>, by <b>Chris Simpkins</b>
+                                <br>
+                                <small> <i>Licensed Under: <a>Hack Open Font License v2.0</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Sound] <a target="_blank" href="https://freesound.org/people/JustinBW/sounds/80921/">buttonchime02up.wav</a>, by <b>JustinBW</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Sound] <a target="_blank" href="http://freesound.org/people/leviclaassen/sounds/107786/">beepbeep.wav</a>, by <b>leviclaassen</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Sound] <a target="_blank" href="http://freesound.upf.edu/people/Ultranova105/sounds/136754/">Shard.wav</a>, by <b>Ultranova105</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Sound] <a target="_blank" href="http://freesound.org/people/LloydEvans09/sounds/185828/">Little thing</a>, by <b>LloydEvans09</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Sound] <a target="_blank" href="https://www.freesound.org/people/suntemple/sounds/241809/">Magic SFX for Games</a>, by <b>suntemple</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Code] <a target="_blank" href="https://cordova.apache.org/">Cordova</a>, by <b>Apache Software Foundation</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)">Apache License 2.0</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Code] <a target="_blank" href="https://html5boilerplate.com/">HTML5 Boilerplate with Modernizr &amp; Respond.js</a>, by <b>Mathias Bynens</b> &amp; <b>Hans Christian Reinl</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://www.tldrlegal.com/license/mit-license">MIT License</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Code] <a target="_blank" href="https://jquery.com/">jQuery</a>, by <b>The jQuery Foundation</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://www.tldrlegal.com/license/mit-license">MIT License</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Code] <a target="_blank" href="https://jqueryui.com/">jQuery UI</a>, by <b>The jQuery Foundation</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://www.tldrlegal.com/license/mit-license">MIT License</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Code] <a target="_blank" href="http://jquerymobile.com/">jQuery Mobile</a>, by <b>The jQuery Foundation</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://www.tldrlegal.com/license/mit-license">MIT License</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Code] <a target="_blank" href="http://handlebarsjs.com/">Handlebars.js Runtime</a>, by <b>Yehuda Katz</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://www.tldrlegal.com/license/mit-license">MIT License</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Code] <a target="_blank" href="http://cubiq.org/iscroll-5">iScroll</a>, by <b>Matteo Spinelli</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://www.tldrlegal.com/license/mit-license">MIT License</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Code] <a target="_blank" href="https://github.com/alisamar/bootstrap-javascript/">Bootstrap (JavaScript Only)</a>, by <b>Ali Samar</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)">Apache License 2.0</a></i></small></h3>
+                            </div>
+                            <div class="section padded">
+                                <h3>[Pre-Compiled Code] <a target="_blank" href="https://github.com/IberaSoft/bower-bootstrap-less">Bootstrap (LESS Only)</a>, by <b>Juan Cruz Llorens</b>
+                                <br>
+                                <small> <i>Licensed Under: <a target="_blank" href="http://www.tldrlegal.com/license/mit-license">MIT License</a></i></small></h3>
+                            </div>
+                        </div>
+                        <p id="footer">
+                            <i>Attribution document generated using <a target="_blank" href="http://www.tldrlegal.com">tldrLegal</a></i>
+                        </p>
+                        <div id="privacyPolicy">
+                            <a href="https://www.iubenda.com/privacy-policy/527353" class="iubenda-white no-brand iub-body-embed iub-no-markup iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+                            <script type="text/javascript">
+								(function(w, d) {
+									var loader = function() {
+										var s = d.createElement("script"),
+										    tag = d.getElementsByTagName("script")[0];
+										s.src = "https://cdn.iubenda.com/iubenda.js";
+										tag.parentNode.insertBefore(s, tag);
+									};
+									if (w.addEventListener) {
+										w.addEventListener("load", loader, false);
+									} else if (w.attachEvent) {
+										w.attachEvent("onload", loader);
+									} else {
+										w.onload = loader;
+									}
+								})(window, document);
+                            </script>
+                        </div>
+                        <div id="termsAndConditions">
+                            <h1>Terms and Conditions ("Terms")</h1>
+                            <p>
+                                Last updated: October 18, 2015
+                            </p>
+
+                            <p>
+                                Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the http://timetrackr.mobi/ website and the Timetrackr.mobi mobile application (the "Service") operated by Delirious Ltd. ("us", "we", or "our").
+                            </p>
+
+                            <p>
+                                Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
+                            </p>
+
+                            <p>
+                                <strong>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</strong>
+                            </p>
+
+                            <p>
+                                <strong>Purchases</strong>
+                            </p>
+
+                            <p>
+                                If you wish to purchase any product or service made available through the Service ("Purchase"), you may be asked to supply certain information relevant to your Purchase including, without limitation, your credit card number, the expiration date of your credit card, your billing address, and your shipping information.
+                            </p>
+
+                            <p>
+                                You represent and warrant that: (i) you have the legal right to use any credit card(s) or other payment method(s) in connection with any Purchase; and that (ii) the information you supply to us is true, correct and complete.
+                            </p>
+
+                            <p>
+                                By submitting such information, you grant us the right to provide the information to third parties for purposes of facilitating the completion of Purchases.
+                            </p>
+
+                            <p>
+                                <strong>Availability, Errors and Inaccuracies</strong>
+                            </p>
+
+                            <p>
+                                We are constantly updating our offerings of products and services on the Service. The products or services available on our Service may be mispriced, described inaccurately, or unavailable, and we may experience delays in updating information on the Service and in our advertising on other web sites.
+                            </p>
+
+                            <p>
+                                We cannot and do not guarantee the accuracy or completeness of any information, including prices, product images, specifications, availability, and services. We reserve the right to change or update information and to correct errors, inaccuracies, or omissions at any time without prior notice.
+                            </p>
+
+                            <p>
+                                <strong>Intellectual Property</strong>
+                            </p>
+                            <p>
+                                The Service and its original content, features and functionality are and will remain the exclusive property of Delirious Ltd. and its licensors. The Service is protected by copyright, trademark, and other laws of both the Norway and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Delirious Ltd..
+                            </p>
+
+                            <p>
+                                <strong>Links To Other Web Sites</strong>
+                            </p>
+
+                            <p>
+                                Our Service may contain links to third-party web sites or services that are not owned or controlled by Delirious Ltd..
+                            </p>
+
+                            <p>
+                                Delirious Ltd. has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that Delirious Ltd. shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.
+                            </p>
+
+                            <p>
+                                We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.
+                            </p>
+
+                            <p>
+                                <strong>Termination</strong>
+                            </p>
+
+                            <p>
+                                We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.
+                            </p>
+
+                            <p>
+                                Upon termination, your right to use the Service will immediately cease.
+                            </p>
+
+                            <p>
+                                <strong>Limitation Of Liability</strong>
+                            </p>
+
+                            <p>
+                                In no event shall Delirious Ltd., nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.
+                            </p>
+
+                            <p>
+                                <strong>Disclaimer</strong>
+                            </p>
+
+                            <p>
+                                Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.
+                            </p>
+
+                            <p>
+                                Delirious Ltd. its subsidiaries, affiliates, and its licensors do not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of using the Service will meet your requirements.
+                            </p>
+
+                            <p>
+                                <strong>Governing Law</strong>
+                            </p>
+
+                            <p>
+                                These Terms shall be governed and construed in accordance with the laws of Norway, without regard to its conflict of law provisions.
+                            </p>
+
+                            <p>
+                                Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.
+                            </p>
+
+                            <p>
+                                <strong>Changes</strong>
+                            </p>
+
+                            <p>
+                                We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+                            </p>
+
+                            <p>
+                                By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
+                            </p>
+
+                            <p>
+                                <strong>Contact Us</strong>
+                            </p>
+
+                            <p>
+                                If you have any questions about these Terms, please contact us.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF INFO -->
+
+            <!-- START OF HOME -->
+            <div id="home" class="appViewContent">
+                <span id="activeWork"></span>
+
+                <div id="calc">
+                    <span id="stampIn">Start</span>
+                    <br />
+                    <span id="tapToStop" class="animation showHide">Tap To Stop</span>
+                </div>
+
+                <div id="moreValves">
+                    <span class="appViewHeaders" id="moreValvesTitle"></span>
+                    <div id="monthlySum">
+                        <span class="glyphicons glyphicons-money"></span>
+                        <br />
+                        <span id="monthlySumContent">0,-</span>
+                    </div>
+                    <div id="monthlyHours">
+                        <span class="glyphicons glyphicons-clock"></span>
+                        <br />
+                        <span id="monthlyHoursContent">0.00</span>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF HOME -->
+
+            <!-- START OF CALENDAR -->
+            <div id="calendar" class="appViewContent">
+                <label class="calendarMonthControls" id="prevMonth"> <span class="glyphicons glyphicons-chevron-left"></span> <span id="prevMonthText">Previous</span> </label>
+                <label class="calendarMonthControls" id="currentMonth"> <span id="currentMonthText">Current</span> </label>
+                <label class="calendarMonthControls" id="nextMonth"> <span id="nextMonthText">Next</span> <span class="glyphicons glyphicons-chevron-right"></span> </label>
+
+                <div id="calendarCircle">
+
+                    <li id="calendarMonthAndYear">
+                        &nbsp;
+                    </li>
+                    <li class="cw">
+                        1
+                    </li>
+                    <li class="cw">
+                        2
+                    </li>
+                    <li class="cw">
+                        3
+                    </li>
+                    <li class="cw">
+                        4
+                    </li>
+                    <li class="cw">
+                        5
+                    </li>
+                    <li class="cw">
+                        6
+                    </li>
+                    <li class="cw">
+                        7
+                    </li>
+                    <li class="cw">
+                        8
+                    </li>
+                    <li class="cw">
+                        9
+                    </li>
+                    <li class="cw">
+                        10
+                    </li>
+                    <li class="cw">
+                        11
+                    </li>
+                    <li class="cw">
+                        12
+                    </li>
+                    <li class="cw">
+                        13
+                    </li>
+                    <li class="cw">
+                        14
+                    </li>
+                    <li class="cw">
+                        15
+                    </li>
+                    <li class="cw">
+                        16
+                    </li>
+                    <li class="cw">
+                        17
+                    </li>
+                    <li class="cw">
+                        18
+                    </li>
+                    <li class="cw">
+                        19
+                    </li>
+                    <li class="cw">
+                        20
+                    </li>
+                    <li class="cw">
+                        21
+                    </li>
+                    <li class="cw">
+                        22
+                    </li>
+                    <li class="cw">
+                        23
+                    </li>
+                    <li class="cw">
+                        24
+                    </li>
+                    <li class="cw">
+                        25
+                    </li>
+                    <li class="cw">
+                        26
+                    </li>
+                    <li class="cw">
+                        27
+                    </li>
+                    <li class="cw">
+                        28
+                    </li>
+                    <li class="cw">
+                        29
+                    </li>
+                    <li class="cw">
+                        30
+                    </li>
+                    <li class="cw">
+                        31
+                    </li>
+
+                    <div id="calendarCirclePointer">
+                        <span class="glyphicons glyphicons-chevron-right" id="calendarPointer"></span>
+                    </div>
+
+                    <span id="prevEntry" class="glyphicons glyphicons-chevron-left disabled"></span>
+                    <span id="nextEntry" class="glyphicons glyphicons-chevron-right disabled"></span>
+
+                    <div id="calendarCircleInner">
+                        <div id="calendarDayOfMonth">
+                            &nbsp;
+                        </div>
+                        <div id="calendarDay">
+                            &nbsp;
+                        </div>
+                        <div id="calendarInfo">
+                            &nbsp;
+                        </div>
+
+                        <div id="entriesCount">
+                            <span id="entriesCurrent"></span>/<span id="entriesTotal"></span>
+                        </div>
+                    </div>
+
+                    <div class="calendarBottom">
+                        <span id="gpsShow" class="glyphicons glyphicons-google-maps"></span>
+                        <span id="sendSms" class="glyphicons glyphicons-sms"></span>
+                        <span id="sendEmail" class="glyphicons glyphicons-message-full"></span>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END OF CALENDAR -->
+
+            <!-- START OF SETTINGS -->
+            <div id="settings" class="appViewContent">
+                <div id="work">
+
+                </div>
+
+                <div id="settingsBarPremium">
+                    <span class="settingsDiv"> <span id="gps" class="glyphicons glyphicons-google-maps premiumGold"></span> </span>
+
+                    <span class="settingsDiv"> <span id="csv" class="glyphicons glyphicons-file-export premiumGold"></span> </span>
+                </div>
+
+                <div id="settingsBarBottomLeft">
+                    <div id="restore" class="settingsDiv">
+                        <!--<span class="glyphicons glyphicons-restart"></span><span id="restoreText">Restore</span>-->
+                    </div>
+                </div>
+
+                <div id="settingsBar">
+                    <span class="settingsDiv"> <span id="add" class="icon glyphicons glyphicons-circle-plus"></span> </span>
+                </div>
+
+                <div id="settingsBarBottomRight">
+                    <span class="settingsDiv"> <span id="sound" class="glyphicons glyphicons-speakers"></span> </span>
+                    <span class="settingsDiv"> <span id="showInfo" class="glyphicons glyphicons-circle-info"></span> </span>
+                </div>
+            </div>
+            <!-- END OF SETTINGS -->
+            
+            <!-- START OF PREMIUM -->
+            <div id="premium" class="appViewContent">
+                <div class="premiumInfo">
+                    <div class="premiumWrapper" id="premiumAds">
+                        <div class="premiumImg">
+                            <span class="glyphicons glyphicons-eye-open"></span>
+                        </div>
+                        <div class="premiumDesc">
+                            <b id="premiumHeader1">Removal of Ads</b>
+                            <br />
+                            <span id="premiumText1">Remove ads.</span>
+                        </div>
+                    </div>
+
+                    <div class="premiumWrapper" id="premiumSend">
+                        <div class="premiumImg">
+                            <span class="glyphicons glyphicons-send"></span>
+                        </div>
+                        <div class="premiumDesc">
+                            <b id="premiumHeader2">Send latest work</b>
+                            <br />
+                            <span id="premiumText2" class="premiumDescContent">After each recording, get the option of sending the recorded data via SMS or email, for example to a supervisor.</span>
+                        </div>
+                    </div>
+
+                    <div class="premiumWrapper" id="premiumGps">
+                        <div class="premiumImg">
+                            <span class="glyphicons glyphicons-google-maps"></span>
+                        </div>
+                        <div class="premiumDesc">
+                            <b id="premiumHeader3">GPS Coordinates</b>
+                            <br />
+                            <span id="premiumText3" class="premiumDescContent">Provide uneditable GPS coordinates, so you can prove where your assignment was.</span>
+                        </div>
+                    </div>
+
+                    <div class="premiumWrapper" id="premiumCsv">
+                        <div class="premiumImg">
+                            <span class="glyphicons glyphicons-file-export"></span>
+                        </div>
+                        <div class="premiumDesc">
+                            <b id="premiumHeader4">Export all data as CSV</b>
+                            <br />
+                            <span id="premiumText4" class="premiumDescContent">Send all recorded data in an CSV file to your mail, that can be opened in Microsoft Office, Apple Numbers or Libreoffice.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF PREMIUM -->
+
+        </section>
+        <!-- END OF APPVIEW -->
+
+        <!-- START OF FOOTERVIEW -->
+        <footer>
+            <nav id="footerSection1" class="footerContent">
+                <ul>
+                    <li class="navLink" data-id="calendar">
+                        <span class="glyphicons glyphicons-calendar"></span>
+                        <br />
+                        <span class="tab-label"><br /></span>
+                    </li>
+                    <li class="navLink active" data-id="home">
+                        <span class="glyphicons"><img id="timetrackrIcon" alt="Timetrackr.mobi" src="img/icon-white.png"></span>
+                        <br />
+                        <span class="tab-label"><br /></span>
+                    </li>
+                    <li class="navLink" data-id="settings">
+                        <span class="glyphicons glyphicons-cogwheel"></span>
+                        <br />
+                        <span class="tab-label"><br /></span>
+                    </li>
+                    <li class="navLink" data-id="premium">
+                        <span class="glyphicons glyphicons-star premiumLink"></span>
+                        <br />
+                        <span id="premiumLabel" class="tab-label">Premium</span>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+        <!-- END OF FOOTERVIEW -->
+
+    </body>
+</html>

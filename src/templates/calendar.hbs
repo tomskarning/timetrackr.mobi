@@ -1,0 +1,14 @@
+{{#each entries}}
+    <div class="calendarEntry">
+        <span class="workName">{{getWorkName id}}</span>
+        <br />
+        <span class="startTime">{{extractTime startDate}}</span>-<span class="stopTime">{{extractTime stopDate}}</span>
+        <br />
+        <span class="glyphicons glyphicons-clock"></span><span class="calendarWorkDuration">{{getWorkDuration startDate stopDate}}</span>
+        <span class="glyphicons glyphicons-money"></span><span class="calendarWorkPay">{{workPay accumulator}}</span>
+        <img class="gpsMap" src="{{gpsUrl startGps stopGps}}" />
+    </div>
+{{/each}}
+{{#unless entries}}
+    {{standardText}}
+{{/unless}}
